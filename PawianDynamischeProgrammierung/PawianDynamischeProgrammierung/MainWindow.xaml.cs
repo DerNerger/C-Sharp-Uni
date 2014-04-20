@@ -26,7 +26,14 @@ namespace PawianDynamischeProgrammierung
             int[] nutiValue = { 11, 15, 20, 28, 9, 3 };
             int[] size = { 8, 12, 13, 20, 7, 4 };
             int[][] sorts = { nutiValue, size };
-            findOptimum(sorts, 115);
+            int [] perfektFeed = findOptimum(sorts, 115);
+
+            //print perfekt feed
+            for (int i = 0; i < 6; i++)
+            {
+                Console.WriteLine("Gemüse index =" + i + ", Menge=" + perfektFeed[i]); // Output: 3*Gemüse0 + 7*Gemüse2
+            }
+            Console.WriteLine("Perfekter Nährstoffgehalt="+perfektFeed[6]); //Output=173
         }
 
 
@@ -68,8 +75,17 @@ namespace PawianDynamischeProgrammierung
                 }
             }
 
+            //zeigt alle Perfekten Teillösungen an
+            //perfekte Endlösung ist Zeile 115
             showTable(results);
-            return null;
+            
+            //gebe Array mit perfekter Mischration zück
+            int[] perfektFeed = new int[7];
+            for (int i = 0; i < perfektFeed.Length; i++)
+            {
+                perfektFeed[i] = results[115,i];
+            }
+            return perfektFeed;
         }
 
         private void showTable(int[,] results)
