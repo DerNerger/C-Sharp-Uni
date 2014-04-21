@@ -29,9 +29,10 @@ namespace PawianDynamischeProgrammierung
 
             DateTime before = DateTime.Now;
             int [] perfektFeed = findOptimum(sorts, 115);
+
             TimeSpan runtime = DateTime.Now - before;
 
-            Console.WriteLine("Runtime = "+runtime);
+            Console.WriteLine("Runtime = " + runtime);
 
             //print perfekt feed
             for (int i = 0; i < 6; i++)
@@ -39,6 +40,8 @@ namespace PawianDynamischeProgrammierung
                 Console.WriteLine("Gemüse index =" + i + ", Menge=" + perfektFeed[i]); // Output: 3*Gemüse0 + 7*Gemüse2
             }
             Console.WriteLine("Perfekter Nährstoffgehalt="+perfektFeed[6]); //Output=173
+
+
         }
 
 
@@ -63,7 +66,7 @@ namespace PawianDynamischeProgrammierung
 
                 //existiert eine Sorte mit höherem Nährwert als der Nährwert der berechneten Kombination?
                 int [] betterSortInfos = getSortBySize(i, sorts);
-                if (betterSortInfos != null)
+                if (betterSortInfos != null && betterSortInfos[1]>optiValue)
                 {
                     //für eine Größe von i ist es besser das Gemüse mit index betterSortInfos[0] und Nährwert betterSortInfos[1] zu benutzen
                     results[i, betterSortInfos[0]] = 1;
