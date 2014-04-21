@@ -26,7 +26,12 @@ namespace PawianDynamischeProgrammierung
             int[] nutiValue = { 11, 15, 20, 28, 9, 3 };
             int[] size = { 8, 12, 13, 20, 7, 4 };
             int[][] sorts = { nutiValue, size };
+
+            DateTime before = DateTime.Now;
             int [] perfektFeed = findOptimum(sorts, 115);
+            TimeSpan runtime = DateTime.Now - before;
+
+            Console.WriteLine("Runtime = "+runtime);
 
             //print perfekt feed
             for (int i = 0; i < 6; i++)

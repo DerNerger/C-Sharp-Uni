@@ -23,6 +23,18 @@ namespace HeapSort
         public MainWindow()
         {
             InitializeComponent();
+            IComparable[] arr = new CompareableInteger[7];
+            arr[0] = new CompareableInteger(22);
+            arr[1] = new CompareableInteger(18);
+            arr[2] = new CompareableInteger(19);
+            arr[3] = new CompareableInteger(5);
+            arr[4] = new CompareableInteger(8);
+            arr[5] = new CompareableInteger(13);
+            arr[6] = new CompareableInteger(33);
+
+            Heap h = new Heap(arr);
+            h.heapSort();
+            h.showHeap();
         }
     }
 }
