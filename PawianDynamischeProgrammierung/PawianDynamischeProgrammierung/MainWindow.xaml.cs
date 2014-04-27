@@ -41,7 +41,6 @@ namespace PawianDynamischeProgrammierung
             }
             Console.WriteLine("Perfekter Nährstoffgehalt="+perfektFeed[6]); //Output=173
 
-
         }
 
 
